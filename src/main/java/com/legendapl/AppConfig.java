@@ -4,7 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.legendapl.app.AddCalculatorImpl;
+import com.legendapl.app.ArgumentResolver;
 import com.legendapl.app.Calculator;
+import com.legendapl.app.ScannerArgumentResolverImpl;
 
 @Configuration
 public class AppConfig {
@@ -13,4 +15,8 @@ public class AppConfig {
 		return new AddCalculatorImpl();
 	}
 
+	@Bean
+	ArgumentResolver resolver() {
+		return new ScannerArgumentResolverImpl();
+	}
 }
